@@ -12,6 +12,7 @@ cache:
     - $HOME/.m2
 
 before_install:
+  - echo -n | openssl s_client -connect https://scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
   - sudo /etc/init.d/postgresql stop
   - docker-compose up -d db redis
   - wget https://codeclimate.com/downloads/test-reporter/test-reporter-0.6.3-linux-amd64 -O ./cc-test-reporter
@@ -44,3 +45,12 @@ script:
   - ./cc-test-reporter sum-coverage reports/codeclimate.* -o coverage/codeclimate.json
   - ./cc-test-reporter upload-coverage
 
+addons:
+  coverity_scan:
+    project:
+      name: "CMSgov/dpc-app"
+      description: "DPC Core Application"
+    notification_email: nicholas.a.robison@omb.eop.gov
+    build_command_prepend: ""
+    build_command: "mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Perror-prone -B -V"
+    branch_pattern: coverity
