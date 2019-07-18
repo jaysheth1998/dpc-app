@@ -1,8 +1,24 @@
+.site-logo {
+  align-items: center;
+  color: $color-primary-darkest;
+  display: flex;
+  flex-shrink: 0;
+  font-size: $h3-font-size;
+  font-weight: $font-bold;
+  text-decoration: none;
+  width: 20rem;
+
+  img {
+    margin-right: $spacer-1;
+    width: $spacer-4;
+  }
+}
+
 .navbar {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: $spacer-2 0;
+  padding: $spacer-3;
 }
 
 .navbar-brand {

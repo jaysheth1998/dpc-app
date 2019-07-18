@@ -1,33 +1,35 @@
-<div class="ds-l-container">
+
   <nav class="navbar navbar-light ">
-    <a class="navbar-brand" href="/">
-      <img src="/assets/site-logo.png" alt="CMS Logo">
+    <a class="site-logo" href="/">
+      <%= image_tag("top-nav-heart.svg", alt: "Heart logo") %> <span class="site-logo-text">Data at the Point of Care</span>
     </a>
 
-    <!--
+
     <button class="navbar-toggler" type="button" data-toggle="collapse"
         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
         aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    -->
 
-    <!--
+
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="topnav">
         <li class="topnav__item">
-          <a class="topnav__link" href="">Support</a>
+          <%= link_to docs_path, :class => "topnav__link" do %>
+            Documentation
+          <% end %>
         </li>
 
         <li class="topnav__item">
-          <a class="topnav__link" href="#">Blog</a>
+          <a class="topnav__link" href="#">Support</a>
         </li>
 
         <li class="topnav__item">
-         <a class="ds-c-button ds-c-button--success" href="#">Sign Up For Beta!</a>
+         <%= link_to docs_path, :class => "ds-c-button ds-c-button--primary" do %>
+           Request access
+         <% end %>
         </li>
       </ul>
     </div>
-    -->
   </nav>
-</div>

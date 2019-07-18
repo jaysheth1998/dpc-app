@@ -1,0 +1,35 @@
+.site-pills {
+  list-style: none;
+  margin: $spacer-2;
+  padding: 0;
+}
+
+.site-pills__item {
+  background-color: $color-primary-alt-lightest;
+  border-radius: 50px;
+  color: $color-primary-alt-darkest;
+  display: inline-block;
+  font-weight: $font-bold;
+  margin: $spacer-1 / 2;
+  padding: $spacer-2 $spacer-5;
+  text-transform: uppercase;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.site-pills__item--orange {
+  background-color: $color-warn-lightest;
+  color: $color-warn-alt;
+}
+
+.site-pills__item--dark-blue {
+  background-color: $color-primary-alt-light;
+  color: $color-primary-alt-dark;
+}
+
+.site-pills__item--green {
+  background-color: $color-success-lightest;
+  color: $color-success
+}
